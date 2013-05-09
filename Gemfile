@@ -6,7 +6,7 @@ gem 'haml-rails'
 gem 'jbuilder', '~> 1.0.1'
 gem 'jquery-rails'
 gem 'rails', '4.0.0.beta1'
-gem 'sqlite3'
+gem 'pg'
 gem 'thin'
 gem 'turbolinks'
 
