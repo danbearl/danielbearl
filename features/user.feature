@@ -11,7 +11,7 @@ Feature: User
       | Email    | dan@example.com |
       | Password | pass            |
     And I press "Log In"
-    Then I should see "Log in successful."
+    Then I should see "Successfully logged in."
 
   Scenario: User logs out
     Given that user is logged in
