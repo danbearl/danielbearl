@@ -13,7 +13,7 @@ class PagesController < ApplicationController
 
   def create
     if created_page.save
-      redirect_to slug_path(new_page.slug)
+      redirect_to slug_path(created_page.slug), notice: "Page successfully created."
     else
       render :new
     end
