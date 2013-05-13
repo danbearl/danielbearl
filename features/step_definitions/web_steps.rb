@@ -8,6 +8,12 @@ Given "that user is logged in" do
 
   fill_in 'email', with: @user.email
   fill_in 'password', with: 'pass'
+
+  click_button "Log In"
+end
+
+Given "I am on the home page" do
+  visit pages_path
 end
 
 # Whens

@@ -15,5 +15,6 @@ Feature: User
 
   Scenario: User logs out
     Given that user is logged in
+    And I am on the home page
     When I follow "Log Out"
     Then I should see "Successfully logged out."
