@@ -1,7 +1,1 @@
-= [:notice, :error, :alert].each do |level|
-  = unless flash[level].blank?
-    %div{class: "alert.alert-#{flash_class(level)}"}
-      .a{class: "close", href: "#"} x
-      = content_tag :p, flash[level]
-
 %h1 Welcome to DanielBearl.com!
