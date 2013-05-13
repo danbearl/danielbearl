@@ -16,6 +16,10 @@ Given "I am on the home page" do
   visit pages_path
 end
 
+Given "I am on the new page view" do
+  visit new_page_path
+end
+
 # Whens
 
 When 'I fill in the following:' do |table|
