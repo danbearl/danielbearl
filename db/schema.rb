@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20130509215855) do
     t.text     "body"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "priority"
   end
 
   create_table "users", force: true do |t|
