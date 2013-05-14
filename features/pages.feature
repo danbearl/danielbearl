@@ -14,3 +14,24 @@ Feature: Pages
     And I press "Create Page"
     Then I should see "Page successfully created."
     And I should see "This is the home page"
+
+  Scenario: Edit a page
+    Given the following page:
+      | name | Home          |
+      | body | The home page |
+    And I am on that page
+    When I follow "Edit"
+    And I fill in the following:
+      | Body | New body content |
+    And I press "Update Page"
+    Then I should see "Page successfully updated."
+    And I should see "New body content"
+
+  Scenario: Delete a page
+    Given the following page:
+      | name | Home     |
+      | body | The body |
+    And I am on that page
+    When I follow "Delete"
+    Then I should see "Page successfully deleted."
+    And I should not see "The Body"

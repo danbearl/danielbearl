@@ -20,6 +20,10 @@ Given "I am on the new page view" do
   visit new_page_path
 end
 
+Given "I am on that page" do
+  visit slug_path(@page.slug)
+end
+
 # Whens
 
 When 'I fill in the following:' do |table|
@@ -33,7 +37,11 @@ When /^I press "(.*?)"$/ do |button|
 end
 
 When /^I follow "(.*?)"$/ do |link|
-  click_link link
+  click_link(link)
+end
+
+When "Show me the page" do
+  save_and_open_page
 end
 
 # Thens
@@ -41,5 +49,11 @@ end
 Then /^I should see "(.*?)"$/ do |text|
   within "body" do
     page.should have_content(text)
+  end
+end
+
+Then /^I should not see "(.*?)"$/ do |text|
+  within "body" do
+    page.should_not have_content(text)
   end
 end
