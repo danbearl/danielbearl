@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/voxdolo/decent_exposure.git
+  revision: a741db2204847dc96c2321dd6c07f162f505adde
+  branch: master
+  specs:
+    decent_exposure (2.1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -55,7 +62,6 @@ GEM
       nokogiri (>= 1.5.0)
     daemons (1.1.9)
     database_cleaner (0.9.1)
-    decent_exposure (2.1.0)
     diff-lcs (1.2.4)
     erubis (2.7.0)
     eventmachine (1.0.3)
@@ -180,7 +186,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0.beta1)
   cucumber-rails
   database_cleaner
-  decent_exposure
+  decent_exposure!
   fabrication
   haml-rails
   jbuilder (~> 1.0.1)

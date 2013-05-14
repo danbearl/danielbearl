@@ -1,8 +1,7 @@
 class PagesController < ApplicationController
 
   expose(:pages)
-  expose(:page, finder: :find_by_slug, finder_parameter: :slug)
-  expose(:created_page) { Page.new(page_params) }
+  expose(:page, finder: :find_by_slug, finder_parameter: :slug, attributes: :page_params)
   expose(:page_slugs) { Page.select(:slug).map(&:slug) }
 
   def show
