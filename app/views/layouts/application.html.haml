@@ -9,10 +9,10 @@
   %body
     .container
       - [:notice, :error, :alert].each do |level|
-        = unless flash[level].blank?
-          %div{class: "alert.alert-#{flash_class(level)}"}
-            .a{class: "close", href: "#"} x
-            = content_tag :p, flash[level]
+        - unless flash[level].blank?
+          %div{class: "alert alert-#{flash_class(level)}"}
+            %a{ href: "#", class: "close", data: { dismiss: "alert" } } &times;
+            = flash[level]
       - if current_user
         = link_to "Log Out", "/log_out"
 
