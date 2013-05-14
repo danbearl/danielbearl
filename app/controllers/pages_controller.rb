@@ -11,8 +11,8 @@ class PagesController < ApplicationController
   end
 
   def create
-    if created_page.save
-      redirect_to slug_path(created_page.slug), notice: "Page successfully created."
+    if page.save
+      redirect_to slug_path(page.slug), notice: "Page successfully created."
     else
       render :new
     end
@@ -20,7 +20,6 @@ class PagesController < ApplicationController
   
   def update
     @page = Page.find(params[:id])
-
     if @page.update_attributes(page_params)
       redirect_to slug_path(@page.slug), notice: "Page successfully updated."
     else
@@ -29,8 +28,11 @@ class PagesController < ApplicationController
   end
 
   def destroy
-    page.destroy
-    redirect_to :root, notice: "Page successfully deleted."
+    if page.destroy
+      redirect_to :root, notice: "Page successfully deleted."
+    else
+      flash.now "Page not destroyed!"
+    end
   end
 
   private
