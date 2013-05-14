@@ -82,6 +82,10 @@ a:active {
   outline: 0;
 }
 
+a.active {
+  text-shadow: 2px 3px 5px #ccc
+}
+
 sub,
 sup {
   position: relative;
