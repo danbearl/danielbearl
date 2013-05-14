@@ -1,8 +1,16 @@
+- if page.errors.any?
+  %ul
+    - page.errors.full_messages.each do |error|
+      %li.error= error
+
 = f.label :name
-= f.text_field :name
+= f.text_field :name, width: "50"
 
 = f.label :body
 = f.text_area :body, class: "span8", rows: "9"
+
+= f.label :priority
+= f.number_field :priority, class: "pull-left"
 
 %br
 
