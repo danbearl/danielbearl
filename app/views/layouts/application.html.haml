@@ -5,14 +5,23 @@
     = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tags
+    %link{href: 'http://fonts.googleapis.com/css?family=Poiret+One|PT+Serif|Open+Sans:400,300', rel: 'stylesheet', type: 'text/css'}
 
   %body
     .container
+      .masthead.clearfix
+        %ul.nav.ww-nav.pull-right.hidden-phone#nav
+          - pages.each do |page|
+            %li
+              = active_link_to page.name, slug_path(page.slug)
+      %hr
+
       - [:notice, :error, :alert].each do |level|
         - unless flash[level].blank?
           %div{class: "alert alert-#{flash_class(level)}"}
             %a{ href: "#", class: "close", data: { dismiss: "alert" } } &times;
             = flash[level]
+
       - if current_user
         = link_to "Log Out", "/log_out"
 
