@@ -31,7 +31,7 @@ class PagesController < ApplicationController
 
   def destroy
     page.destroy
-    redirect_to :root, notice: "#{page.name} was deleted."
+    redirect_to :root, notice: "Page successfully deleted."
   end
 
   private
