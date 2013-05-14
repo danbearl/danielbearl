@@ -20,8 +20,10 @@ class PagesController < ApplicationController
   end
   
   def update
-    if page.save
-      redirect_to slug_path(page.slug)
+    @page = Page.find(params[:id])
+
+    if @page.update_attributes(page_params)
+      redirect_to slug_path(@page.slug), notice: "Page successfully updated."
     else
       render :edit
     end
