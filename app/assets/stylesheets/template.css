@@ -292,7 +292,7 @@ body {
 
 /***** 4. Forms *****/
 
-button
+button, input[type="submit"]
 {
 	/*background-color: #9b7188;*/
 	border:none;

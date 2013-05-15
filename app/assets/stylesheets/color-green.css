@@ -96,13 +96,13 @@ hr {
 
 /***** 4. Forms *****/
 
-button
+button, input[type="submit"]
 {
 	background-color: #B2B74E;
 	color:#eeeee6;
 }
 
-button:hover
+button:hover, input[type="submit"]:hover
 {
 	background-color: #c9cc83;
 }
