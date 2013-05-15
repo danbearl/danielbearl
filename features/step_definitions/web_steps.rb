@@ -24,6 +24,10 @@ Given "I am on that page" do
   visit slug_path(@page.slug)
 end
 
+Given "I am on the blog page" do
+  visit posts_path
+end
+
 # Whens
 
 When 'I fill in the following:' do |table|

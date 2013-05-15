@@ -10,8 +10,8 @@ Feature: Blog
     Given I am on the blog page
     When I follow "New Post"
     And I fill in the following:
-      | title | the first post       |
-      | body  | This is so much fun! |
+      | Title | the first post       |
+      | Body  | This is so much fun! |
     And I press "Create Post"
     Then I should see "Post successfully created."
     And I should see "This is so much fun!"
