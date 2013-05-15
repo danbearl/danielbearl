@@ -1,11 +1,14 @@
 Danielbearl::Application.routes.draw do
   get 'log_in' => 'user_sessions#new', as: 'log_in'
   get 'log_out' => 'user_sessions#destroy', as: 'log_out'
+  get 'blog' => 'posts#index', as: 'blog'
 
   root to: 'pages#index'
-  resources :users, only: [:new, :create]
-  resources :user_sessions, only: [:new, :create, :destroy]
+
   resources :pages
+  resources :posts
+  resources :user_sessions, only: [:new, :create, :destroy]
+  resources :users, only: [:new, :create]
 
   get "/:slug", to: "pages#show", as: :slug
   get "/:slug/edit", to: "pages#edit", as: :edit_slug
