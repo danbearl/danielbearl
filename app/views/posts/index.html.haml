@@ -1,0 +1,18 @@
+.row.main-content
+  .offset1.span6.zone-content
+    - posts.each do |post|
+      %article
+        .published
+          = post.created_at
+        %h1= post.title
+        %div
+          :markdown
+            #{post.body}
+        - if current_user
+          = link_to 'Edit', edit_post_path(post), class: "button-link"
+          = link_to 'Delete', post, method: :destroy, data: { confirm: "Are you sure?" }, class: "button-link"
+
+  %aside.aside-column.offset1.span3#aside-right
+    - if current_user
+      %div
+        = link_to 'New Post', new_post_path, class: "button-link"
