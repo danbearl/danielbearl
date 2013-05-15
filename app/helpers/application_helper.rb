@@ -12,9 +12,6 @@ module ApplicationHelper
 
   private
 
-  def current_user
-    @current_user ||= User.find(session[:user_id]) if session[:user_id]
-  end
 
   def active_link_to(text, path, options={})
     if /^#{url_for(path)}/ =~ request.path
@@ -23,5 +20,5 @@ module ApplicationHelper
     
     link_to text, path, options
   end
-  
+
 end

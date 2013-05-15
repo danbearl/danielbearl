@@ -1,5 +1,7 @@
 class PagesController < ApplicationController
 
+  before_filter :require_user, only: [:new, :update, :create, :destroy]
+
   expose(:pages)
   expose(:page, finder: :find_by_slug, finder_parameter: :slug, attributes: :page_params)
   expose(:page_slugs) { Page.select(:slug).map(&:slug) }
