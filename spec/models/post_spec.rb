@@ -10,7 +10,7 @@ describe Post do
 
       post = Post.create!(title: "A post", body: body)
 
-      expect(post.lead.length).to eq(300)
+      expect(post.lead.length).to eq(303)
     end
 
     it 'returns the full body if less than 300 characters' do

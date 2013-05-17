@@ -40,6 +40,18 @@ Given /^(?:that|those) (.*) belongs? to that (.*)$/ do |children, parent|
   end
 end
 
+Given "a long post" do
+  body = ''
+  400.times do
+    body << 'a'
+  end
+
+  Fabricate(:post,
+            title: "Post title",
+            body: body
+           )
+end
+
 Then /^I should see (\d+) ([^"]*) in the database$/ do |count, model_name|
   Fabrication::Cucumber::StepFabricator.new(model_name).klass.count.should == count.to_i
 end

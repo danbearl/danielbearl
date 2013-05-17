@@ -36,3 +36,9 @@ Feature: Blog
     When I follow "Delete"
     Then I should see "Post successfully deleted."
     And I should not see "Post Body"
+
+  Scenario: Long posts get their own page
+    Given a long post
+    And I am on the blog page
+    When I follow "Read more..."
+    Then I should see "Post"
