@@ -1,5 +1,11 @@
 class PostsController < ApplicationController
-  expose(:posts)
+  expose(:posts) {
+    if params[:tags]
+      Post.where "tags && ARRAY[?]", params[:tags]
+    else
+      Post.all
+    end
+  }
   expose(:post, attributes: :post_params)
 
   def create
