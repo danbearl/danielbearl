@@ -10,6 +10,7 @@ gem 'redcarpet'
 gem 'pg'
 gem 'thin'
 gem 'turbolinks'
+gem 'will_paginate', '~> 3.0.0'
 
 group :assets do
   gem 'sass-rails',   '~> 4.0.0.beta1'
