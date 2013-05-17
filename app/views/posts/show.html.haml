@@ -1,0 +1,14 @@
+.row.main-content
+  .offset1.span6.zone-content
+    %article{ class: "blog-post" }
+      .published
+        = post.created_at
+      %h1= post.title
+      %div
+        :markdown
+          #{post.body}
+
+  %aside.aside-column.offset1.span3#aside-right
+    - if current_user
+      %div
+        = link_to 'New Post', new_post_path, class: "button-link"
