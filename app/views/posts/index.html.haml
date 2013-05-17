@@ -28,3 +28,10 @@
     - if current_user
       %div
         = link_to 'New Post', new_post_path, class: "button-link"
+    %article.widget-tag-cloud.widget
+      %header
+        %h1 Tag Cloud
+        %ul.tagcloud
+          - tag_cloud Post.tag_cloud(posts), %w{tagCloud-1 tagCloud-2 tagCloud-3 tagCloud-4 tagCloud-5} do |name, css_class|
+            %li{ class: "tagCloud-tag #{css_class}" }
+              = link_to name, posts_path(tags: name)

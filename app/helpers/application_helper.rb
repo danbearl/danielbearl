@@ -10,6 +10,15 @@ module ApplicationHelper
 
   end
 
+  def tag_cloud(tags, classes)
+    max = tags.sort_by{|k,v| v}.last[1]
+
+    tags.each do |tag, count|
+      index = count.to_f / max * (classes.size - 1)
+      yield(tag, classes[index.round])
+    end
+  end
+
   private
 
 
