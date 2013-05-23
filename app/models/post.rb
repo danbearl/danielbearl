@@ -24,6 +24,7 @@ class Post < ActiveRecord::Base
 
   def self.tag_cloud(posts)
     tags = {}
+
     posts.each do |post|
       unless post.tags_list.blank?
         post.tags_list.split(/,\s+/).each do |tag|
@@ -34,6 +35,10 @@ class Post < ActiveRecord::Base
           end
         end
       end
+    end
+    
+    if tags.length < 1
+      tags["None"] = 1
     end
 
     return tags
