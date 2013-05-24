@@ -34,4 +34,4 @@ Feature: Pages
     And I am on that page
     When I follow "Delete"
     Then I should see "Page successfully deleted."
-    And I should not see "The Body"
+    And I should not see "Home"

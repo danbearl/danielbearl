@@ -1,9 +1,9 @@
 class PostsController < ApplicationController
   expose(:posts) {
     if params[:tags]
-      Post.where("tags && ARRAY[?]", params[:tags]).order('created_at DESC')
+      Post.where("tags && ARRAY[?]", params[:tags]).paginate(page: params[:page], per_page: 10).order('created_at DESC')
     else
-      Post.all.order('created_at DESC')
+      Post.paginate(page: params[:page], per_page: 10).order('created_at DESC')
     end
   }
   expose(:post, attributes: :post_params)

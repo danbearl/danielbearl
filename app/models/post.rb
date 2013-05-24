@@ -1,4 +1,6 @@
 class Post < ActiveRecord::Base
+  validates_presence_of :body
+
   def lead
     terminal = [299, self.body.length - 1].min
     

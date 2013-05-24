@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'bootstrap-will_paginate'
 gem 'decent_exposure', git: "git://github.com/voxdolo/decent_exposure.git", branch: "master"
 gem 'haml-rails'
 gem 'jbuilder', '~> 1.0.1'

@@ -23,6 +23,7 @@
             - if current_user
               = link_to 'Edit', edit_post_path(post), class: "button-link"
               = link_to 'Delete', post, method: :delete, data: { confirm: "Are you sure?" }, class: "button-link"
+      = will_paginate posts
 
   %aside.aside-column.offset1.span3#aside-right
     - if current_user

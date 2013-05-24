@@ -30,7 +30,8 @@ class PagesController < ApplicationController
   end
 
   def destroy
-    if page.destroy
+    @page = Page.find(params[:id])
+    if @page.destroy
       redirect_to :root, notice: "Page successfully deleted."
     else
       flash.now "Page not destroyed!"
