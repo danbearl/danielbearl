@@ -1,6 +1,9 @@
 development:
   adapter: postgresql
   database: danielbearl_development
+production:
+  adapter: postgresql
+  database: danielbearl_production
 test: &test
   adapter: postgresql
   database: danielbearl_test
