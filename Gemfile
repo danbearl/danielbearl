@@ -6,7 +6,7 @@ gem 'decent_exposure', git: "git://github.com/voxdolo/decent_exposure.git", bran
 gem 'haml-rails'
 gem 'jbuilder', '~> 1.0.1'
 gem 'jquery-rails'
-gem 'rails', '4.0.0.beta1'
+gem 'rails', '4.0.0.rc1'
 gem 'redcarpet'
 gem 'pg'
 gem 'thin'
@@ -14,8 +14,8 @@ gem 'turbolinks'
 gem 'will_paginate', '~> 3.0.0'
 
 group :assets do
-  gem 'sass-rails',   '~> 4.0.0.beta1'
-  gem 'coffee-rails', '~> 4.0.0.beta1'
+  gem 'sass-rails',   '~> 4.0.0.rc1'
+  gem 'coffee-rails', '~> 4.0.0.rc1'
   gem 'uglifier', '>= 1.0.3'
 end
 

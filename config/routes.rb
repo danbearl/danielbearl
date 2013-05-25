@@ -13,6 +13,6 @@ Danielbearl::Application.routes.draw do
 
   get "/:slug", to: "pages#show", as: :slug
   get "/:slug/edit", to: "pages#edit", as: :edit_slug
-  put "/:slug", to: "pages#update", as: :slug
-  post "/:slug", to: "pages#destroy", as: :slug
+  put "/:slug", to: "pages#update", as: :update_slug
+  post "/:slug", to: "pages#destroy", as: :destroy_slug
 end
