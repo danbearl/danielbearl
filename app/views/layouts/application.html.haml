@@ -10,10 +10,15 @@
   %body
     .container
       .masthead.clearfix
+        = link_to image_tag("DanielBearlLogo.png", id: "logo", alt: "danielbearl.com"), :root
         %ul.nav.ww-nav.pull-right.hidden-phone#nav
+          %li
+            = active_link_to 'Home', '/home'
           - pages.each do |page|
             %li
               = active_link_to page.name, slug_path(page.slug)
+          %li
+            = active_link_to 'Blog', '/blog'
       %hr
 
       - [:notice, :error, :alert].each do |level|

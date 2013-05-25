@@ -2,6 +2,7 @@ Danielbearl::Application.routes.draw do
   get 'log_in' => 'user_sessions#new', as: 'log_in'
   get 'log_out' => 'user_sessions#destroy', as: 'log_out'
   get 'blog' => 'posts#index', as: 'blog'
+  get 'home' => 'pages#index', as: 'home'
 
   root to: 'pages#index'
 
