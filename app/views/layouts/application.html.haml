@@ -31,3 +31,19 @@
         = link_to "Log Out", "/log_out"
 
       = yield
+
+      %hr
+      .row.triple-row
+        .span4.triple#triple-first
+        .span4.triple#triple-second
+          .zone.zone-triple-second
+            %article.widget-triple-third.widget-html-widget.widget
+              %header 
+                %h1 Connect
+              = link_to raw('<i class="smicon-twitter"></i>'), "http://www.twitter.com/danbearl"
+              = link_to raw('<i class="smicon-google"></i>'), "https://plus.google.com/116426476281213679784/"
+              = link_to raw('<i class="smicon-github"></i>'), "http://www.github.com/danbearl"
+      %hr
+      .row
+        .copyright.span12
+          &copy;2013 Daniel Bearl
