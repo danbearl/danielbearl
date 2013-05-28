@@ -1,1 +1,12 @@
-%h1 Welcome to DanielBearl.com!
+.row.main-content
+  .offset1.span6.zone-content
+    %article
+      %h1 Welcome to DanielBearl.com
+
+    %hr
+    %article
+      %h2 Latest Post:
+
+    = render partial: 'posts/full_post', locals: { post: newest_post }
+
+  = render 'layouts/aside'

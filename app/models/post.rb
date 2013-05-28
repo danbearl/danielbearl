@@ -1,6 +1,8 @@
 class Post < ActiveRecord::Base
   validates_presence_of :body
 
+  default_scope order('created_at DESC, updated_at DESC')
+
   def lead
     terminal = [299, self.body.length - 1].min
     
