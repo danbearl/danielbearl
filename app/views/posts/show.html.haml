@@ -1,10 +1,3 @@
 .row.main-content
   .offset2.span8.zone-content
-    %article{ class: "blog-post" }
-      .published
-        = post.created_at
-      %h1= post.title
-      %div
-        :markdown
-          #{post.body}
-
+    = render "full_post"
