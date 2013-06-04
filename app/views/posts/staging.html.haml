@@ -3,12 +3,11 @@
     - if current_user
       %div
         = link_to 'New Post', new_post_path, class: "button-link"
-        = link_to 'Drafts', '/posts/staging', class: "button-link"
     %ul.blog-posts
-      - published_posts.each do |post|
+      - drafts.each do |post|
         - @position = ''
-        - if published_posts.first == post then @position = "first" end
-        - if published_posts.last == post then @position = "last" end
+        - if drafts.first == post then @position = "first" end
+        - if drafts.last == post then @position = "last" end
         %li{ class: @position }
           %article{ class: "blog-post" }
             .published
@@ -27,6 +26,6 @@
             - if current_user
               = link_to 'Edit', edit_post_path(post), class: "button-link"
               = link_to 'Delete', post, method: :delete, data: { confirm: "Are you sure?" }, class: "button-link"
-      = will_paginate published_posts
+      = will_paginate drafts
 
   = render 'layouts/aside'

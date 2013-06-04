@@ -1,4 +1,9 @@
 # Givens
+
+Given "I am on the staging page" do
+  visit "/posts/staging"
+end
+
 Given "I am on the log in page" do
   visit new_user_session_path
 end

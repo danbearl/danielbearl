@@ -6,7 +6,7 @@ class PagesController < ApplicationController
   expose(:page, finder: :find_by_slug, finder_parameter: :slug, attributes: :page_params)
   expose(:page_slugs) { Page.select(:slug).map(&:slug) }
   expose(:posts)
-  expose(:newest_post) { posts.first }
+  expose(:newest_post) { Post.where("draft = false").first }
 
   def show
     if page.is_a? NilClass

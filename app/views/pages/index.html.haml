@@ -4,9 +4,10 @@
       %h1 Welcome to DanielBearl.com
 
     %hr
-    %article
-      %h2 Latest Post:
+    - unless newest_post.nil?
+      %article
+        %h2 Latest Post:
 
-    = render partial: 'posts/full_post', locals: { post: newest_post }
+      = render partial: 'posts/full_post', locals: { post: newest_post }
 
   = render 'layouts/aside'

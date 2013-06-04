@@ -1,4 +1,4 @@
-= form_for post do |f|
+= form_for post, class: "form-horizontal" do |f|
   %fieldset
     = f.label :title
     = f.text_field :title
@@ -8,5 +8,10 @@
 
     = f.label :tags_list, "Tags"
     = f.text_field :tags_list
+
+    .control-group
+      = f.label :draft, class: "text-centered"
+      .controls
+        = f.check_box :draft
 
     = f.submit

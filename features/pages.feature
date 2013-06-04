@@ -9,16 +9,16 @@ Feature: Pages
   Scenario: Create a new page
     Given I am on the new page view
     When I fill in the following:
-      | Name | Home                  |
-      | Body | This is the home page |
+      | Name | About                  |
+      | Body | This is the about page |
     And I press "Create Page"
     Then I should see "Page successfully created."
-    And I should see "This is the home page"
+    And I should see "This is the about page"
 
   Scenario: Edit a page
     Given the following page:
-      | name | Home          |
-      | body | The home page |
+      | name | About          |
+      | body | The about page |
     And I am on that page
     When I follow "Edit"
     And I fill in the following:
@@ -29,9 +29,9 @@ Feature: Pages
 
   Scenario: Delete a page
     Given the following page:
-      | name | Home     |
+      | name | About    |
       | body | The body |
     And I am on that page
     When I follow "Delete"
     Then I should see "Page successfully deleted."
-    And I should not see "Home"
+    And I should not see "About"

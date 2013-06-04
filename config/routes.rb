@@ -3,6 +3,7 @@ Danielbearl::Application.routes.draw do
   get 'log_out' => 'user_sessions#destroy', as: 'log_out'
   get 'blog' => 'posts#index', as: 'blog'
   get 'home' => 'pages#index', as: 'home'
+  get 'posts/staging' => 'posts#staging', as: 'posts/staging'
 
   root to: 'pages#index'
 
