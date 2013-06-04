@@ -48,7 +48,8 @@ Given "a long post" do
 
   Fabricate(:post,
             title: "Post title",
-            body: body
+            body: body,
+            draft: false
            )
 end
 

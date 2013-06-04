@@ -20,6 +20,7 @@ Feature: Blog
     Given the following post:
       | title | Post      |
       | body  | Post Body |
+      | draft | false     |
     And I am on the blog page
     When I follow "Edit"
     And I fill in the following:
@@ -32,6 +33,7 @@ Feature: Blog
     Given the following post:
       | title | Post      |
       | body  | Post Body |
+      | draft | false     |
     And I am on the blog page
     When I follow "Delete"
     Then I should see "Post successfully deleted."
