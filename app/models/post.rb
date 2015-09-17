@@ -1,18 +1,19 @@
 class Post < ActiveRecord::Base
   validates_presence_of :body
+  serialize :tags
 
-  default_scope order('created_at DESC, updated_at DESC')
+  default_scope {order('created_at DESC, updated_at DESC')}
 
   def lead
     terminal = [299, self.body.length - 1].min
-    
+
     if terminal == self.body.length - 1
-      return_str = self.body 
+      return_str = self.body
     else
       return_str = self.body[0..terminal] + "..."
     end
 
-    return return_str 
+    return return_str
   end
 
   def tags_list
@@ -40,7 +41,7 @@ class Post < ActiveRecord::Base
         end
       end
     end
-    
+
     if tags.length < 1
       tags["None"] = 1
     end

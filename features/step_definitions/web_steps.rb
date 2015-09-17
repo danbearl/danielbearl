@@ -57,12 +57,12 @@ end
 
 Then /^I should see "(.*?)"$/ do |text|
   within "body" do
-    page.should have_content(text)
+    expect(page).to have_content(text)
   end
 end
 
 Then /^I should not see "(.*?)"$/ do |text|
   within "body" do
-    page.should_not have_content(text)
+    expect(page).to_not have_content(text)
   end
 end

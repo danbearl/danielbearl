@@ -1,6 +1,6 @@
 class Page < ActiveRecord::Base
 
-  default_scope order('priority ASC')
+  default_scope { order('priority ASC') }
 
   validates_uniqueness_of :name
 

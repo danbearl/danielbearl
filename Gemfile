@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.1.1'
+ruby '2.1.6'
 
 gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'bootstrap-will_paginate'
@@ -7,10 +7,11 @@ gem 'decent_exposure', git: "git://github.com/voxdolo/decent_exposure.git", bran
 gem 'haml-rails'
 gem 'jbuilder', '~> 1.0.1'
 gem 'jquery-rails'
-gem 'rails', '4.0.0.rc1'
+gem 'rails', '4.2.4'
 gem 'redcarpet', '~> 3.1.1'
 gem 'pg'
-gem 'thin'
+gem 'therubyracer'
+gem 'puma'
 gem 'turbolinks'
 gem 'will_paginate', '~> 3.0.0'
 
@@ -25,7 +26,7 @@ group :production do
 end
 
 group :test do
-  gem 'cucumber-rails'
+  gem 'cucumber-rails', require: false
   gem 'launchy'
   gem 'rspec-rails'
 end
