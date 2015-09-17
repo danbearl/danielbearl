@@ -6,8 +6,8 @@
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tags
     %link{href: 'http://fonts.googleapis.com/css?family=Poiret+One|PT+Serif|Open+Sans:400,300', rel: 'stylesheet', type: 'text/css'}
-    %link{href: "http://yandex.st/highlightjs/8.0/styles/default.min.css", rel: 'stylesheet', type: 'text/css'}
-    %script{src: "http://yandex.st/highlightjs/8.0/highlight.min.js"}
+    %link{href: "http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/styles/default.min.css", rel: 'stylesheet', type: 'text/css'}
+    %script{src: "http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"}
     %script hljs.initHighlightingOnLoad();
 
   %body
@@ -41,7 +41,7 @@
         .span4.triple#triple-second
           .zone.zone-triple-second
             %article.widget-triple-third.widget-html-widget.widget
-              %header 
+              %header
                 %h1 Connect
               = link_to raw('<i class="smicon-twitter"></i>'), "http://www.twitter.com/danbearl"
               = link_to raw('<i class="smicon-google"></i>'), "https://plus.google.com/116426476281213679784/"
